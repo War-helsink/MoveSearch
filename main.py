@@ -180,7 +180,7 @@ def welcome(message):
 	sqlite.close()
 	
 
-	sti = open("./index.webp", "rb")
+	sti = open("./img/index.webp", "rb")
 	bot.send_sticker(message.chat.id, sti)
 	bot.send_message(message.chat.id, "Добро пожаловать, {}!\nЯ - <b>{}</b>, отличный подборник фильмов!!!".format(message.from_user.first_name, bot.get_me().username), parse_mode='html')
 	markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -201,7 +201,7 @@ def info(message):
 
 @bot.message_handler(commands=['exit'])
 def exit(message):
-	sti = open("./index1.webp", "rb")
+	sti = open("./img/index1.webp", "rb")
 	bot.send_sticker(message.chat.id, sti)
 	bot.send_message(message.chat.id, "Прощай, {}!\nХорошего дня!!!".format(message.from_user.first_name), parse_mode='html')
 
@@ -307,7 +307,7 @@ def lalala(message):
 					i = i + 1
 				bot.send_message(message.chat.id, message.text, parse_mode='html', reply_markup=markup)
 			else:
-				sti = open("./index2.webp", "rb")
+				sti = open("./img/index2.webp", "rb")
 				bot.send_sticker(message.chat.id, sti)
 				bot.send_message(message.chat.id, "Нет фильмов в поиску🤷‍♂️🤷‍♀️")
 
